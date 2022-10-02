@@ -98,6 +98,21 @@ h1 {
 .over-flow-hidden {
   overflow: hidden;
 }
+.train-container {
+  overflow: hidden;
+  width: 100vw;
+}
+.images-train-left,
+.images-train-right {
+  display: flex;
+  transition: all 1s ease;
+  gap: 1em;
+}
+
+.images-train-left img,
+.images-train-right img {
+  object-fit: contain;
+}
 
 @media screen and (max-width: 768px) {
   #cursor-dot-outline {

@@ -71,6 +71,7 @@ changeColorRandomly(4)
 
 for (let i = 0; i < sections.length; i++) {
     const element = sections[i];
+    console.log(element);
     gsap.fromTo(`.${element.childNodes[1].className}`, {
         scrollTrigger: {
             trigger: `.${element.className}`,
@@ -108,5 +109,21 @@ function toggleMenu() {
 }
 
 
-// smoother
+// images train left and right
+let leftTrainScrollWidth = document.querySelector(".images-train-left")
+gsap.fromTo(".images-train-left", { x: leftTrainScrollWidth.scrollWidth }, {
+    x: -1 * (leftTrainScrollWidth.offsetWidth),
+    scrollTrigger: {
+        trigger: `body`,
+        scrub: 1,
+    },
+})
 
+
+gsap.fromTo('.images-train-right', { x: -1500 }, {
+    x: -500,
+    scrollTrigger: {
+        trigger: `.train-container`,
+        scrub: 1,
+    },
+})
